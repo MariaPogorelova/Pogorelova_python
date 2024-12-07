@@ -19,7 +19,4 @@ while type(c) != int:
         print("Неправильно ввели!")
         a = input("Введите третье число: ")
 
-if (a == -b) or (a == -c) or (b == -c):
-    print("true")
-else:
-    print("false")
+print((a == -b) or (a == -c) or (b == -c))
