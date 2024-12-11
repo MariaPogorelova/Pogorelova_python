@@ -3,15 +3,16 @@
 
 try:
     N = int(input("Введите целое число: "))
-    total_sum = 0
-    i = 1
+
     if N <= 0:
         print("Ошибка: N должно быть больше нуля")
     else:
+        total_sum = 0
+        i = 1
         while i <= N:
             total_sum = total_sum + i ** i
             i += 1
 
-    print(total_sum)
+            print(total_sum)
 except ValueError:
     print("Ошибка! Введите корректные числовые данные")
