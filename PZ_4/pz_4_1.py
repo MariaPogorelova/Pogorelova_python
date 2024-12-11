@@ -23,7 +23,7 @@ try:
             n += 1
             result = s + 1
 
-    print(f"Приближенное значение cos({x}): {result}")
+            print(f"Приближенное значение cos({x}): {result}")
 except ValueError:
     print("Ошибка! Введите корректные числовые данные")
 
