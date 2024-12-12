@@ -34,7 +34,7 @@ else:
         s += term
         sign *= -1
         n += 1
-        result = s + 1
+    result = s + 1
 
     print(f"Приближенное значение cos({X}): {result}")
 
