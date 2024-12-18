@@ -2,6 +2,9 @@
 # убыванию. Сделать список упорядоченным, переместив элемент, нарушающий
 # упорядоченность, на новую позицию.
 def fix_decreasing_list(random_list):
+    if type(random_list) != list:
+        raise TypeError("Входной аргумент дожен быть списком")
+
     if len(random_list) < 2:
         return random_list
 
@@ -25,9 +28,11 @@ def fix_decreasing_list(random_list):
     random_list.append(el_out_of_order)
     return random_list
 
-
-random_list = [5, 4, 3, 2, 6, 1]
-print("Исходный список:", random_list)
-sorted_list = fix_decreasing_list(random_list)
-print("Упорядоченный список:", sorted_list)
+try:
+    random_list = [9, 10, 4, 3, 1]
+    print("Исходный список:", random_list)
+    sorted_list = fix_decreasing_list(random_list)
+    print("Упорядоченный список:", sorted_list)
+except TypeError as e:
+    print(f"Произошла ошибка: {e}")
 
