@@ -1,7 +1,7 @@
 #Дано целое положительное число. Вывести символы, изображающие цифры этого
 #числа (в порядке слева направо).
 num = input("Введите число: ")
-print(type(num))
-result = num.split()
+print(num)
+result = list(str(num))
 print(result)
 
