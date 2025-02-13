@@ -1,16 +1,27 @@
-# Известны марки машин, выпускаемые в данной стране и экспортируемых в N заданных
-# стран. Определить какие марки машин были доставлены во все указанные страны, какие в
-# некоторые из стран и какие не доставлены ни в одну страну.
-# Ввод всех выпускаемых марок автомобилей
-#  toyota honda bmw audi
-all_cars = set(input("Введите все выпускаемые марки через пробел: ").split())
+# # Известны марки машин, выпускаемые в данной стране и экспортируемых в N заданных
+# # стран. Определить какие марки машин были доставлены во все указанные страны, какие в
+# # некоторые из стран и какие не доставлены ни в одну страну.
 
-n = int(input("Введите количество стран: "))
+all_cars = {'Toyota', 'Ford', 'BMW', 'Audi', 'Honda', 'Nissan'}
+print(f'\nСписок всех марок машин:\n{all_cars}')
 
-countries = []
-for i in range(n):
-    cars = set(input(f"Введите марки для страны {i+1} через пробел: ").split())
-    countries.append(cars)
-    print(f"country_{i+1} = {cars}")
-print(countries)
+Russia = {'Toyota', 'Ford'}
+China = {'Ford', 'BMW', 'Audi'}
+USA = {'Toyota', 'Audi', 'Ford'}
 
+some_countries_models_union = Russia | China | USA
+all_countries_models_intersection = Russia & China & USA
+not_delivered_anywhere = all_cars - some_countries_models_union
+
+print(
+    f'\nМарки автомобилей которые были доставлены в некоторые из указанных стран:\n{some_countries_models_union}')
+
+if not_delivered_anywhere:
+    print(f'\nМодели не доставленные никуда:\n{not_delivered_anywhere}')
+else:
+    print("\nВсе модели из списка были доставлены как минимум в одну страну.")
+
+if all_countries_models_intersection:
+    print(f'\nМодели доставленные во все страны:\n{all_countries_models_intersection}')
+else:
+    print("\nНет моделей доставленных всем трем странам.")
