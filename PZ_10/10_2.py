@@ -1,50 +1,33 @@
 # audi, volvo, bmw, honda
 #  toyota honda bmw audi
 def create_car_sets():
-    # Ввод всех возможных марок машин
     all_cars_input = input('Введите все возможные марки машин через запятую: ')
     all_cars_set = set(car.strip() for car in all_cars_input.split(','))
 
-    # Ввод количества стран
     n = int(input('Введите количество стран: '))
 
     car_sets = {}
-
-    # Ввод марок машин для каждой страны
     for i in range(n):
         country = input(f'Введите название {i + 1} страны: ')
         cars_in_country_input = input(
             f'Введите марки машин, поставляемых в {country}, разделенные запятой: ')
-
         if cars_in_country_input:
             cars_in_country_set = set(car.strip() for car in cars_in_country_input.split(','))
             if not cars_in_country_set.issubset(all_cars_set):
                 print("Предупреждение: введены машины не из списка всех возможных моделей.")
                 print("Используем только те модели которые есть в списке.")
                 cars_in_country_set &= all_cars_set  # Пересечение с множеством всех возможных моделей
-
             car_sets[country] = cars_in_country_set
         else:
             car_sets[country] = set()
-
     return all_cars_set, car_sets
-
-
-# Пример использования функции
 all_possible_models, country_car_sets = create_car_sets()
-
-# Определение марок машин доставленных во все страны
 all_countries_models_intersection \
     = set.intersection(*country_car_sets.values())
-
-# Определение марок машин доставленных хотя бы в одну страну
 some_countries_models_union \
     = set.union(*country_car_sets.values())
-
-# Определение моделей которые не были доставлены никуда
 not_delivered_anywhere \
-    = all_possible_models - some_countries_models_union
-
+    = all_possible_models - some_countries_models_Union
 print(f'\nМарки автомобилей которые были поставлены во все указанные страны:\n{all_countries_models_intersection}')
 print(
     f'\nМарки автомобилей которые были поставлены хотя бы в некоторые из указанных стран:\n{some_countries_models_union}')
