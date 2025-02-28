@@ -42,8 +42,5 @@ for i in range(len(k)):
 
 f4 = open('data_4.txt', 'a', encoding="utf-8") # открываем файл для дозаписи
 f4.write('\n')
-f4.write(f'Количество элементов: {count}\n')
-f4.write(f'Минимальный элемент: {min}\n')
-f4.write(f'Числа кратные трем: {digit_3}\n')
-f4.write(f'Количество чисел кратных трем: {count_digit_3}\n')
+print(f'Количество элементов: {count}\nМинимальный элемент: {min}\nЧисла кратные трем: {digit_3}\nКоличество чисел кратных трем: {count_digit_3}\n', file=f4)
 f4.close()

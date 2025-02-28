@@ -3,19 +3,13 @@
 # наибольшей длины. fg
 t = 0
 d = 0
-for i in open('text18-20.txt', encoding='utf-8'):
+for i in open('text18-20.txt', encoding='utf-16'):
     print(i, end='')
-    t += 1
     for j in i:
-        if j == 'ж':
-           d += 1
+        d += 1
 print(end='\n')
-print('Количество строк: ', t, end='\n')
-print('Количество букв "ж" : ', d, end='\n')
-f1 = open('text18-20.txt', encoding='utf-8')
-l = f1.readlines()
-l[0], l[3] = l[3], l[0]
+print('Количество символов: ', d, end='\n')
+f1 = open('text18-20.txt', encoding='utf-16')
 f1.close()
 f2 = open('new_text18-20.txt', 'w')
-f2.writelines(l)
 f2.close()
