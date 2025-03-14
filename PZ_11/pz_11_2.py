@@ -3,20 +3,17 @@
 # наибольшей длины.
 t = 0
 d = 0
-for i in open('text18-20.txt', encoding='utf-16'):
+max_line = 0
+for i in open('text18-20.txt', encoding='utf-8'):
     print(i, end='')
+    if len(i) > max_line:
+        longest = i
+        max_line = len(i)
     for j in i:
         d += 1
 print(end='\n')
 print('Количество символов: ', d, end='\n')
-# разбиваем строку и ее значения преобразуем в числа
-f1 = open('text18-20.txt', encoding='utf-16')
-k = f1.read()
-k = k.split()
-for i in range(len(k)):
-    k[i] = int(k[i])
+# print(f"строка наибольшей длины: {max_line}")
+f1 = open('text18-20.txt', encoding="utf-8")
+l = f1.readlines()
 f1.close()
-
-f1.close()
-f2 = open('new_text18-20.txt', 'w')
-f2.close()
