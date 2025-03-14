@@ -9,11 +9,10 @@ for i in open('text18-20.txt', encoding='utf-8'):
     if len(i) > max_line:
         longest = i
         max_line = len(i)
+        print(i)
     for j in i:
         d += 1
 print(end='\n')
 print('Количество символов: ', d, end='\n')
-# print(f"строка наибольшей длины: {max_line}")
+print(f"строка наибольшей длины: {max_line}")
 f1 = open('text18-20.txt', encoding="utf-8")
-l = f1.readlines()
-f1.close()
