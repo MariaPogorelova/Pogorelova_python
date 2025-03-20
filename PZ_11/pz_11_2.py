@@ -3,16 +3,18 @@
 # наибольшей длины.
 t = 0
 d = 0
-max_line = 0
-for i in open('text18-20.txt', encoding='utf-8'):
+max_line = ""
+len_max = 0
+f1 = open('text18-20.txt', encoding='utf-8')
+for i in f1:
     print(i, end='')
-    if len(i) > max_line:
-        longest = i
-        max_line = len(i)
-        print(i)
+    if len(i) > len(max_line):
+        max_line = i
+        len_max = len(i)
     for j in i:
         d += 1
 print(end='\n')
-print('Количество символов: ', d, end='\n')
-print(f"строка наибольшей длины: {max_line}")
-f1 = open('text18-20.txt', encoding="utf-8")
+print('Количество символов в тексте: ', d, end='\n')
+new_file = open('new18-20.txt', 'w', encoding='utf-8')
+print(f"Cтрока наибольшей длины:\n{max_line}", file=new_file)
+print(f"Длина строки:\n{len_max}", file=new_file)

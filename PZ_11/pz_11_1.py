@@ -8,39 +8,35 @@
 # Числа кратные трем:
 # Количество чисел кратных трем:
 
-# Запишем в файл data_3.txt структуру данных - список
 l = ['-99 6 12 -36 20 45 100 -15']
 f3 = open('data_3.txt', 'w')
 f3.writelines(l)
 f3.close()
 
-# Дублируем список в новый файл data_4.txt
 f4 = open('data_4.txt', 'w', encoding="utf-8")
 f4.write('Исходные данные: ')
 f4.write('\n')
 f4.writelines(l)
 f4.close()
 
-# разбиваем строку и ее значения преобразуем в числа
 f3 = open('data_3.txt')
 k = f3.read()
 k = k.split()
 for i in range(len(k)):
     k[i] = int(k[i])
 f3.close()
-# Ищем количество элементов, минимальный элемент, числа кратные трем, количество чисел кратных трем
-# в файле data_3.txt и записываем в файл data_4.txt
+
 f3 = open('data_3.txt')
-count, min, count_digit_3 = 0, 0, 0
+count, min_num, count_digit_3 = 0, 0, 0
 digit_3 = []
 for i in range(len(k)):
     count += 1
-    min = min if min < k[i] else k[i]
+    min_num = min_num if (min_num < k[i]) else k[i]
     if k[i] % 3 == 0:
         digit_3.append(k[i])
         count_digit_3 += 1
 
 f4 = open('data_4.txt', 'a', encoding="utf-8") # открываем файл для дозаписи
 f4.write('\n')
-print(f'Количество элементов: {count}\nМинимальный элемент: {min}\nЧисла кратные трем: {digit_3}\nКоличество чисел кратных трем: {count_digit_3}\n', file=f4)
+print(f'Количество элементов: {count}\nМинимальный элемент: {min_num}\nЧисла кратные трем: {digit_3}\nКоличество чисел кратных трем: {count_digit_3}\n', file=f4)
 f4.close()
