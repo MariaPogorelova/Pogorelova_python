@@ -36,7 +36,7 @@ for i in range(len(k)):
         digit_3.append(k[i])
         count_digit_3 += 1
 
-f4 = open('data_4.txt', 'a', encoding="utf-8") # открываем файл для дозаписи
+f4 = open('data_4.txt', 'a', encoding="utf-8")
 f4.write('\n')
 print(f'Количество элементов: {count}\nМинимальный элемент: {min_num}\nЧисла кратные трем: {digit_3}\nКоличество чисел кратных трем: {count_digit_3}\n', file=f4)
 f4.close()
