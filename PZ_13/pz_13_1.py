@@ -1,9 +1,7 @@
 # В двумерном списке найти сумму элементов первых двух строк.
-a = [[0] * 7 for i in range(5)]
-k = 0
-for i in range(5):
-   for j in range(6, -1, -1):
-       a[i][j] = k
-       k += 1
+size = int(input("Введите размер массива: "))
+matrix = [[i + j * size for i in range(size)] for j in range(size)]
 
-print(*a, sep='\n')
+print("Исходная матрица:")
+for row in matrix:
+    print(*row)
