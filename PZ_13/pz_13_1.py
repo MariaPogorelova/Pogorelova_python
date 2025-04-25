@@ -1,10 +1,10 @@
 # # В двумерном списке найти сумму элементов первых двух строк.
-size = int(input("Введите размер массива: "))
-matrix = [[i + j * size for i in range(size)] for j in range(size)]
+import random
+matrix = [[random.randint(-10,10) for _ in range(4)] for _ in range(4)]
 
 print("Исходная матрица:")
 for row in matrix:
-    print(*row)
+    print(row)
 
 sum_first_two_rows = sum(map(sum, matrix[:2]))
 

@@ -1,10 +1,10 @@
 # В двумерном списке найти минимальный и максимальные элементы.
-size = int(input("Введите размер массива: "))
-matrix = [[i + j * size for i in range(size)] for j in range(size)]
+import random
+matrix = [[random.randint(-10,10) for _ in range(4)] for _ in range(4)]
 
 print("Исходная матрица:")
 for row in matrix:
-    print(*row)
+    print(row)
 
 min_num = min((min(_) for _ in matrix))
 print('Минимальное число: ', min_num)

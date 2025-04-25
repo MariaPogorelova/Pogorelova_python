@@ -5,5 +5,7 @@ def find_positive_num(numbers):
     first_half = numbers[:half_length]
     num_count = len([num for num in first_half if num>=0])
     return num_count
+
+
 numbers = list(map(int, input('Введите числа через пробел: ').split()))
 print(find_positive_num(numbers))
