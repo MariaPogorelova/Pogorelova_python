@@ -8,6 +8,6 @@ for row in matrix:
     print(row)
 # Нахождение суммы элементов столбцов с четными номерами
 for j in range(len(matrix)):
-    if j % 2 == 0:
+    if (j+1) % 2 == 0:
         col_sum = sum(row[j] for row in matrix)
-        print(f"Сумма столбца {j}: {col_sum}")
+        print(f"Сумма столбца {j+1}: {col_sum}")

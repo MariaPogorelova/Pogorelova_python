@@ -9,6 +9,6 @@ for row in matrix:
     print(row)
 # Нахождение среднего арифметического для строк с нечетными номерами
 for i in range(len(matrix)):
-    if i % 2 != 0:
+    if (i+1) % 2 != 0:
         avg = sum(matrix[i]) / len(matrix[i])
-        print(f"Среднее арифметическое строки {i}: {avg}")
+        print(f"Среднее арифметическое строки {i+1}: {avg}")
