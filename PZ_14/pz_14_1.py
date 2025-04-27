@@ -1,11 +1,10 @@
+# Из текстового файла (writer.txt) выбрать фамилии писателей, посчитать количество
+# фамилий. Создать новый файл, в котором выполнить замену слова «роман» на слово
+# «произведение».
 import re
-p = re.compile(r"\bpython\b")
-print ("Найдено" if p.search ("python") else "Нет")
-# выдаст Найдено
-print ("Найдено" if p.search("pythonware") else "Нет")
-# выдаст Нет
-p = re.compile(r"\Bth\B")
-print ("Найдено" if p.search("python") else "Нет")
-# выдаст Найдено
-print ("Найдено" if p.search("this") else "Нет")
-# выдаст Нет
+old_word = re.compile("\bроман\b")
+new_word = 'произведение'
+with open('writer.txt', 'r', encoding='utf-8') as file:
+    text = file.read()
+    print(re.sub(old_word, new_word, text))
+
